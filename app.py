@@ -1,5 +1,5 @@
 from pandas import Series
-from statsmodels.tsa.arima_model import ARIMA
+from statsmodels.tsa.arima.model import ARIMA
 from statsmodels.tsa.arima_model import ARIMAResults
 import streamlit as st
 import pandas as pd
