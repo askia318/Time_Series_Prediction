@@ -54,9 +54,9 @@ def main():
     #st.subheader('HV-Lab TPRI')
 
     #col1, col2 = st.columns(2)
-    col.write('The SARIMA model will predict the future power generation of Chang-Bing Solar Photovoltaic Energy System.')
-    col.write('You can input number of days and the predictions will be presented in dataframe and graph.')
-    col.write('The parameters used in SARIMA model is (0, 0, 0) and (1, 1, 1, 144)')
+    st.text('The SARIMA model will predict the future power generation of Chang-Bing Solar Photovoltaic Energy System.')
+    st.text('You can input number of days to predict and the predictions will be presented in dataframe and line Chart.')
+    st.text('The parameters used in SARIMA model is (0, 0, 0) and (1, 1, 1, 144)')
 
 
     #col2.image('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Taiwan_Power_Company_Seal.svg/220px-Taiwan_Power_Company_Seal.svg.png',
