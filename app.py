@@ -6,7 +6,6 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 from pickle import load
-import matplotlib.pyplot as plt
 
 @st.cache(allow_output_mutation=True)
 def predict_series(minutes_per10):
