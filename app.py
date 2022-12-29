@@ -55,12 +55,12 @@ def main():
 
     #col1, col2 = st.columns(2)
 
-    st.markdown('''<h2 style='text-align: center; color: blue;'>
+    st.text('''
        The SARIMA model will predict the future power generation
        of Chang-Bing Solar Photovoltaic Energy System. You can
        input number of days to predict and the predictions will
        be presented in dataframe and line Chart. The parameters
-       used in SARIMA model is (0, 0, 0) and (1, 1, 1, 144). </h2>
+       used in SARIMA model is (0, 0, 0) and (1, 1, 1, 144).
        ''')
     #st.write('Notification:', run_sentiment_analysis(txt))
 
@@ -74,11 +74,12 @@ def main():
     minutes_per10 = days * 144
 
     #model = load_selected_model()
-    data = load_data()
+
 
     # when 'Predict' is clicked, make the prediction and store it
     if st.button("Predict"):
         #fault_type = ''
+        data = load_data()
         prediction = predict_series(data, minutes_per10)
         known = list(data['net_power_gen'])
         pred = list(prediction)
