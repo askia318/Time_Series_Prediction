@@ -8,8 +8,8 @@ from PIL import Image
 from pickle import load
 
 @st.cache(allow_output_mutation=True)
-def predict_series(minutes_per10):
-    model = ARIMA(test['net_power_gen'], order=(0, 0, 0), seasonal_order = (1, 1, 1, 144))
+def predict_series(data, minutes_per10):
+    model = ARIMA(data['net_power_gen'], order=(0, 0, 0), seasonal_order = (1, 1, 1, 144))
     fitted = model.fit()
     # Forecast
     fc= fitted.forecast(len(test), alpha=0.05)  # 95% conf
@@ -55,12 +55,12 @@ def main():
 
     #col1, col2 = st.columns(2)
 
-    st.text('''
+    st.markdown('''<h3 style='text-align: center; color: blue;>
        The SARIMA model will predict the future power generation
        of Chang-Bing Solar Photovoltaic Energy System. You can
        input number of days to predict and the predictions will
        be presented in dataframe and line Chart. The parameters
-       used in SARIMA model is (0, 0, 0) and (1, 1, 1, 144).
+       used in SARIMA model is (0, 0, 0) and (1, 1, 1, 144). </h3>
        ''')
     #st.write('Notification:', run_sentiment_analysis(txt))
 
@@ -79,7 +79,7 @@ def main():
     # when 'Predict' is clicked, make the prediction and store it
     if st.button("Predict"):
         #fault_type = ''
-        prediction = predict_series(minutes_per10)
+        prediction = predict_series(data, minutes_per10)
         known = list(data['net_power_gen'])
         pred = list(prediction)
         preds = pd.DataFrame(pred, columns =['Power_Predictions'])
