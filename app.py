@@ -55,7 +55,7 @@ def main():
 
     #col1, col2 = st.columns(2)
 
-    st.text('Instructions', '''
+    st.text('''
        The SARIMA model will predict the future power generation
        of Chang-Bing Solar Photovoltaic Energy System. You can
        input number of days to predict and the predictions will
