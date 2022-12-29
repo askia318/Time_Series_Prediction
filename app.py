@@ -53,19 +53,19 @@ def main():
     #st.header('Cheng-Chung Li, Shuo-Fu Hong, Wei-Chih Liang')
     #st.subheader('HV-Lab TPRI')
 
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.write('')
-    with col2:
-        st.write('''
+    #col1, col2, col3 = st.columns(3)
+    #with col1:
+    #    st.write('')
+    #with col2:
+    st.write('''
        The SARIMA model will predict the future power generation
        of Chang-Bing Solar Photovoltaic Energy System. You can
        input number of days to predict and the predictions will
        be presented in dataframe and line Chart. The parameters
        used in SARIMA model is (0, 0, 0) and (1, 1, 1, 144).
        ''')
-    with col3:
-        st.write('')
+    #with col3:
+    #    st.write('')
     #st.write('Notification:', run_sentiment_analysis(txt))
 
     #col2.image('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Taiwan_Power_Company_Seal.svg/220px-Taiwan_Power_Company_Seal.svg.png',
